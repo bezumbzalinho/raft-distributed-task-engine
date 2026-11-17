@@ -14,16 +14,16 @@ The system decouples request routing, task scheduling, execution, and state pers
 
 ## Key Engineering Highlights
 
-- **Consensus & Leader Election:** Implemented Raft leader election and state replication across storage nodes to ensure consistency under node crashes[cite: 6, 7].
-- **Quorum Failure Detection:** Workers run majority-vote health checks to detect coordinator failures and trigger automatic failover without single points of failure[cite: 6].
-- **Consistent-Hash Task Recovery:** Pending tasks are mapped via consistent hashing so surviving nodes deterministically reclaim and re-execute orphaned jobs[cite: 5].
-- **Thread-Safe Concurrency:** Built synchronized FIFO task queues using explicit Java concurrency locks to prevent race conditions under parallel worker polling[cite: 6, 7].
+- **Consensus & Leader Election:** Implemented Raft leader election and state replication across storage nodes to ensure consistency under node crashes.
+- **Quorum Failure Detection:** Workers run majority-vote health checks to detect coordinator failures and trigger automatic failover without single points of failure.
+- **Consistent-Hash Task Recovery:** Pending tasks are mapped via consistent hashing so surviving nodes deterministically reclaim and re-execute orphaned jobs.
+- **Thread-Safe Concurrency:** Built synchronized FIFO task queues using explicit Java concurrency locks to prevent race conditions under parallel worker polling.
 
 ## Tech Stack
 
-- **Language:** Java 19[cite: 4]
-- **Networking & RPC:** Java RMI, UDP Multicast[cite: 4, 5]
-- **Algorithms:** Raft Consensus, Consistent Hashing, Quorum Voting[cite: 5, 6]
+- **Language:** Java 19
+- **Networking & RPC:** Java RMI, UDP Multicast
+- **Algorithms:** Raft Consensus, Consistent Hashing, Quorum Voting
 
 ## Running Locally
 
